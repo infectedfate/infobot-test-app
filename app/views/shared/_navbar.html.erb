@@ -1,0 +1,16 @@
+
+<nav class="navbar navbar-light bg-light">
+  <h1>
+    <%= link_to "Infobot", root_path, class: 'navbar-brand' %>
+  </h1>
+
+    <span class="navbar-text">
+      <% if signed_in? %>
+      Welcome, <b><%= current_user.email %></b> |
+        <%= link_to t('logout'), sign_out_path, method: :delete %>
+      <% else %>
+        <%=link_to t('.login'), sign_in_path %> |
+        <%=link_to t('.sign_up'), sign_up_path %>
+      <% end %>
+    </span>
+</nav>
