@@ -1,5 +1,6 @@
 class UsersController < Clearance::UsersController
-  before_action :set_user, only: :show
+  before_action :require_login, only: :show
+  before_action :set_user, only: %i[show update edit]
 
   def index
     @user = User.all
@@ -12,7 +13,7 @@ class UsersController < Clearance::UsersController
   end
 
   def update
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       redirect_to user_path(@user)
     else
       render :edit
