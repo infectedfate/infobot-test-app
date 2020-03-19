@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  include Clearance::User
+  mount_uploader :avatar, AvatarUploader
 end
