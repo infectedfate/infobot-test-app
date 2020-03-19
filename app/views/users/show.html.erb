@@ -1,2 +1,3 @@
 <%= @user.email %>
-<%= @user.avatar%>
+<br>
+<%= image_tag(@user.avatar.url, alt: 'Avatar') if @user.avatar? %>

@@ -7,7 +7,8 @@
     <span class="navbar-text">
       <% if signed_in? %>
       Welcome, <b><%= current_user.email %></b> |
-        <%= link_to t('logout'), sign_out_path, method: :delete %>
+        <%= link_to t('.logout'), sign_out_path, method: :delete %>
+        <%= link_to t('.profile'), user_path(current_user), method: :get %>
       <% else %>
         <%=link_to t('.login'), sign_in_path %> |
         <%=link_to t('.sign_up'), sign_up_path %>
