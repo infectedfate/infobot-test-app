@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  after_create :crop_avatar
+  after_save :crop_avatar
 
   validates :email, uniqueness: true, format: { with: /.+@.+\..+/i }
 
