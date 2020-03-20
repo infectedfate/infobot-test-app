@@ -2,6 +2,8 @@ class UsersController < Clearance::UsersController
   before_action :require_login, only: :show
   before_action :set_user, only: %i[show update edit]
 
+  def index; end
+
   def show; end
 
   def edit; end

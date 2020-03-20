@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   after_save :crop_avatar
 
-  validates :email, uniqueness: true, format: { with: /.+@.+\..+/i }
+  validates :password, length: { in: 6..20 }
 
   private
 
