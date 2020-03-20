@@ -1,5 +1,4 @@
 <%= @user.email %>
 <br>
-<%= image_tag(@user.avatar.url, alt: 'Avatar') if @user.avatar? %>
-<br>
+<%= image_tag(@user.avatar.thumb.url, alt: 'avatar') %> <br>
 <%= link_to 'Edit profile', edit_user_path(@user) %>
