@@ -3,9 +3,6 @@
 
   <%= bootstrap_form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
-    <div>
-      <%= form.check_box :remove_avatar %>
-    </div>
     <div class="submit-field">
       <%= form.submit %>
     </div>
